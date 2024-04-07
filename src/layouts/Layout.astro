@@ -2,18 +2,40 @@
 import '@fontsource/fira-sans';
 interface Props {
 	title: string;
+    description: string;
 }
 
-const { title } = Astro.props;
+const { title,description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="mi-catalogo: Al alcance de la mano" />
+        <meta charset="UTF-8" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/bag.svg" />
+
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@mi-catalogo" />
+        <meta name="twitter:creator" content="@mi-catalogo" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="/bag.svg" />
+    
+        <meta name="og:image" content="/bag.svg" />
+        <meta name="og:title" content={title} />
+        <meta name="og:description" content={description} />
+        <meta name="og:url" content="https://mi-catalogo.com.ar" />
+        <meta name="og:site_name" content="mi-catalogo" />
+        <meta name="og:type" content="website" />
+        <meta name="og:locale" content="es_AR" />
+    
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
 		
 		<title>{title}</title>
 	</head>
